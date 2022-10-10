@@ -100,12 +100,28 @@ public class Job {
 
     @Override
     public String toString() {
-        String jobString = "\nID=" + id +
-                ", Name='" + name +
-                ", Employer=" + employer +
-                ", Location=" + location +
-                ", Position Type=" + positionType +
-                ", Core Competency=" + coreCompetency +"\n";
+        if(name == ""){
+            name="Data not available";
+        }
+        if (employer.getValue() == ""){
+            employer.setValue("Data not available");
+        }
+        if (location.getValue() == ""){
+            location.setValue("Data not available");
+        }
+        if (positionType.getValue() == ""){
+            positionType.setValue("Data not available");
+        }
+        if (coreCompetency.getValue() == ""){
+            coreCompetency.setValue("Data not available");
+        }
+        String jobString = "\nID: " + id +
+                "\nName: " + name +
+                "\nEmployer: " + employer +
+                "\nLocation: " + location +
+                "\nPosition Type: " + positionType +
+                "\nCore Competency: " + coreCompetency +"\n";
+
         return jobString;
 
     }
