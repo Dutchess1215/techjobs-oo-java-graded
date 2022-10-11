@@ -39,31 +39,31 @@ public class JobTest {
 
     @Test
     public void testJobConstructorSetsAllFields() {
-        Job testJob3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         //checks that job classes are initialized correctly
-        assertTrue(testJob3.getName() == "Product tester");
-        assertTrue(testJob3.getEmployer() instanceof Employer);
-        assertTrue(testJob3.getLocation() instanceof Location);
-        assertTrue(testJob3.getPositionType() instanceof PositionType);
-        assertTrue(testJob3.getCoreCompetency() instanceof CoreCompetency);
+        assertTrue(testJob.getName() == "Product tester");
+        assertTrue(testJob.getEmployer() instanceof Employer);
+        assertTrue(testJob.getLocation() instanceof Location);
+        assertTrue(testJob.getPositionType() instanceof PositionType);
+        assertTrue(testJob.getCoreCompetency() instanceof CoreCompetency);
 
         //checks that inputs are stored correctly
-        assertEquals(testJob3.getName(), "Product tester");
-        assertEquals(testJob3.getEmployer().toString(), "ACME");
-        assertEquals(testJob3.getLocation().toString(), "Desert");
-        assertEquals(testJob3.getPositionType().toString(), "Quality control");
-        assertEquals(testJob3.getCoreCompetency().toString(), "Persistence");
+        assertEquals(testJob.getName(), "Product tester");
+        assertEquals(testJob.getEmployer().toString(), "ACME");
+        assertEquals(testJob.getLocation().toString(), "Desert");
+        assertEquals(testJob.getPositionType().toString(), "Quality control");
+        assertEquals(testJob.getCoreCompetency().toString(), "Persistence");
 
     }
 
     @Test
     public void testJobsForEquality() {
 
-        Job testJob3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        Job testJob4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertNotEquals(testJob3, testJob4);
-        assertFalse(testJob3 == testJob4);
+        Job testJob1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job testJob2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertNotEquals(testJob1, testJob2);
+        assertFalse(testJob1 == testJob2);
 
     }
 
@@ -86,16 +86,16 @@ public class JobTest {
     @Test
     public void testToStringContainsCorrectLabelsAndData() {
 
-        Job testJob3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         String jobString;
-        jobString = testJob3.toString();
-        assertEquals("\nID: " + testJob3.getId() +
-                "\nName: " + testJob3.getName() +
-                "\nEmployer: " + testJob3.getEmployer() +
-                "\nLocation: " + testJob3.getLocation()+
-                "\nPosition Type: " + testJob3.getPositionType() +
-                "\nCore Competency: " + testJob3.getCoreCompetency() +"\n", jobString);
+        jobString = testJob.toString();
+        assertEquals("\nID: " + testJob.getId() +
+                "\nName: " + testJob.getName() +
+                "\nEmployer: " + testJob.getEmployer() +
+                "\nLocation: " + testJob.getLocation()+
+                "\nPosition Type: " + testJob.getPositionType() +
+                "\nCore Competency: " + testJob.getCoreCompetency() +"\n", jobString);
     }
 
     @Test
